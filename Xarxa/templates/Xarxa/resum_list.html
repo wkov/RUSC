@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="main">
+        <table border="0" cellpadding="4" width="100%">
+            <tr>
+                <td><b><h2></h2></b></td>
+                <td></td>
+                <td></td>
+            </tr>
+            {% for post in object_list %}
+                <tr>
+                    <td {% if forloop.last %}class="last"{% endif %}>
+                        <div class="title">{{ post.titol }}
+                        </div></td>
+                    <td><a class="button" href="{% url 'resum_detail' post.id %}">DETALL</a></td>
+                    <td {% if forloop.last %}class="last"{% endif %}>
+                        <a class="button" href="{% url 'resum_update' post.id %}">MODIFICAR</a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+
+            {% for tag in tags %}
+                <li> [{{ tag.count }}]
+                    <b><a class="button" href="{% url 'aportacionsxtag' tag.name|slugify %}">{{ tag.name }}</a></b>
+                </li>
+            {% endfor %}
+        </table>
+    {% if tema_pk %}
+        <img src="{% url 'chart' tema_pk %}" >
+    {% else %}
+        <img src="{% url 'chart'  0 %}" >
+    {% endif %}
+    </div>
+{% endblock %}

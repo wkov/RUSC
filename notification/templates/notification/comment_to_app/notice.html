@@ -1,0 +1,6 @@
+{% load i18n %}{% url 'debats' debat.aportacio.id as invitation_page %}{% url 'profile' debat.autor as user_page %}
+{% blocktrans with debat.autor as debat_from_user and debat.aportacio.titol as debat_titol and debat.aportacio.tema as tema_name%}
+       Tema: {{ tema_name }}
+    <a href="{{ user_page }}">{{ debat_from_user }}</a> ha comentat la teva <a href="{{ invitation_page }}">
+    aportació:{{ debat_titol }}</a>
+{% endblocktrans %}

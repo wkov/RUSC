@@ -1,0 +1,14 @@
+{% load i18n %}{% url 'debats' debat.aportacio.id as invitation_page %} {% url 'profile' debat.autor as user_page %}
+{% blocktrans with debat.autor as debat_from_user and debat.aportacio.titol as debat_titol and debat.aportacio.tema as tema_name%}
+   Tema: {{ tema_name }}
+    Com tu,  <a href="{{ user_page }}">{{ debat_from_user }}</a> ha comentat la <a href="{{ invitation_page }}">
+    aportació:{{ debat_titol }}</a>
+{% endblocktrans %}
+
+{#{% load i18n %}{% url 'debats' as debat_page %}{% blocktrans with debat.from_user as debat_from_user %}#}
+{#    Has rebut un comentari de {{ debat_from_user }} en un fil on participes {% endblocktrans %}#}
+
+{##}
+{#{% load i18n %}{% url invitations as invitation_page %}{% url profile_detail username=invitation.from_user.username as user_url %}#}
+{#{% blocktrans with invitation.from_user as invitation_from_user %}<a href="{{ user_url }}">{{ invitation_from_user }}</a>#}
+{#    has requested to add you as a friend (see <a href="{{ debats }}">new comment</a>){% endblocktrans %}#}

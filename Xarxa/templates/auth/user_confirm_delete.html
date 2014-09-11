@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Segur que vols esborrar "{{ object.title }}"?</p>
+
+<form method="post" action="{% url 'registration_delete' object.username %}">
+  {% csrf_token %}
+  <a href="{% url 'profile' user.username %}">Go back</a>
+  <p><input type="submit" value="Confirm deletion" /></p>
+</form> 
+
+{% endblock %}

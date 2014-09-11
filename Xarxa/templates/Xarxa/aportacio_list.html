@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+            {% for aportacio in object_list %}
+                <form method="post" action="{% url 'vote' %}" class="vote_form">
+                    <li> [{{ aportacio.votes }}]
+                    {% csrf_token %}
+                     <input type="hidden" id="id_aportacio" name="aportacio" class="hidden_id" value="{{ aportacio.pk }}" />
+                     <input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}" />
+                     {% if not user.is_authenticated %}
+                        <button disabled title="Please login to vote">+</button>
+                     {% elif aportacio.pk not in voted %}
+                        <button>+</button>
+                     {% else %}
+                        <button>-</button>
+                     {% endif %}     <b>{{ aportacio.titol }}</b>   {{ aportacio.autor }}
+                        <div class="title"></div>
+
+                                {{ aportacio.entradilla }}
+
+                            <div>
+                                <a class="button" href="{% url 'debat_create' aportacio.id aportacio.debat_id %}">Comentar</a>
+                                <a class="button" href="{% url 'aportacio_detail' aportacio.id %}">Detall</a>
+                                {% if aportacio.autor == user %}
+                                    <a class="button" href="{% url 'aportacio_update' aportacio.id %}">Modificar</a>
+                                {% endif %}
+                                <a class="button" href="{% url 'debats' aportacio.id %}">[{{ aportacio.debats.count }}]Comentaris Comparteix</a>
+                            </div>
+                    </li>
+                </form>
+            {% endfor %}
+    {% if is_paginated %}
+        <div class="pagination">
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">More &raquo;</a>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<table>
+    <caption> "Notices" </caption>
+    <thead>
+        <tr>
+            <th> "Type" </th>
+            <th> "Message" </th>
+            <th> "Date of the Notice" </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for notice in notices %}
+            {% if notice.is_unseen %}
+                ------<tr class="unseen_notice">
+            {% else %}
+                <tr class="notice">
+            {% endif %}
+                <td class="notice_type">{{ notice.notice_type.display }}</td>
+                <td class="notice_message">{{ notice.message|safe }}</td>
+                <td class="notice_time">{{ notice.added|timesince }}  "ago" </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------
+
+
+
+{# {% for notice in notices %}#}
+{#     <p>#}
+{#     {% if notice.is_unseen %}#}
+{#ººººººººººººººººººººººººººººººººººººº#}
+{#      {% endif %}#}
+{#    User: {{notice.user}} Unseen:{{notice.unseen}}  message:<b>{{ notice.message }}</b>  notice_type: {{ notice.notice_type }}#}
+{#     added: {{ notice.added }} archived: {{ notice.archived }} {{ notice.sender }}   yah {{ notice.notice_type.description }} aha#}
+{#    </p>#}
+{##}
+{#     {% load i18n %}{% url 'debats' debat.aportacio.id %} {{ debat.autor }} {{ debat.text }}#}
+{##}
+{##}
+{##}
+{#     {{ unread_count }}#}
+{##}
+{# {% endfor %}#}
+{##}
+{##}
+{% endblock %}

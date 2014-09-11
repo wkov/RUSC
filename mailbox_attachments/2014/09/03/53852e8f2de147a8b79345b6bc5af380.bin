@@ -1,0 +1,70 @@
+Entrega FC
+Oscar Bartra
+15.XII.06
+2AM11
+
+5.a.
+Pebloc = Pebit*casos_desfaborables(15) = 8*10^-5
+
+Pebit = 5.33*10^-6
+
+5.b
+
+Pebit = (1/2)*erfc(arrel(Eb/No)) = 5.33*10-6
+Desenvolupant,
+Eb/N0 = 10.24
+Tb = Eb/4*10^4N0 = 0.256ms
+rs = 1/tb = 3.9Kbps
+
+5.c
+Ar = 4.7Kbps - 3.9Kbps = 0.8Kbps
+
+5.d
+(A partir de la matriu)
+desenvolupem i veiem que la distància mínima (dmin) = 3
+tc = (dmin - 1)/ 2 = 1 bit
+
+5.e
+
+# paraules = 128
+# paraules (E = 0) = 16
+# paraules(#bite = 1) = 112
+# paraules(#bite > 1) = 0
+Com que la capacitat correctora és superior a 1 veiem
+que sempre podrem corretgir els errors
+
+19.a
+
+Fem la transposada de la matriu pero començant pel final
+
+Veiem que:
+
+S    E
+000-000000
+001-000001
+010-000010
+011-010000
+100-000100
+...
+
+19.b
+z*H1^t = 100100(Matriu_trasposada_començant_pel_final)= 010 ->000010
+
+Enviem 100
+voliem enviar 100110
+
+19.c
+
+Tornem a obtenir la taula S - E i veiem que en (7,4) detectem 1 error (sindrome = 1 bit)
+En (6,3) (sindrome = 2 bits) i podem corretgir 2 bits, per tant és millor.
+
+20.a
+
+Seguim el mateix procediment que en el 19.a, transposada començant pel final i taula S - E
+
+20.b
+
+Z*H2^t = 1001001(Matriu_trasposada_començant_pel_final) = 111 -> E = 0100000
+
+Enviem = 1101
+Voliem enviar 1101

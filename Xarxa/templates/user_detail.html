@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ object.username }}</h2>
+{% if object.userprofile.bio %}
+<div>
+<b>Bio:</b>
+{{ object.userprofile.bio }}
+</div>
+{% endif %}
+{% if object.username == user.username %}
+<p><a href='{% url "edit_profile" %}'>Edit my profile</a></p>
+<p><a href='{% url "registration_delete" object.username %}'>Donarme de baixa de la XSVC</a></p>
+{% endif %}
+{#{% if "zodcat" in object.userprofile.bio %}#}
+{#<style>#}
+{#html {#}
+{#  background: #EEE url("{STATIC_URL}/img/batukk.jpg");#}
+{# }#}
+{#</style>#}
+{#{% endif %}#}
+
+{% endblock %}

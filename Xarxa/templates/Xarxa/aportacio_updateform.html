@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% load micawber_tags %}
+{% load tagging_tags %}
+
+
+{#<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css"#}
+{#      rel=stylesheet type="text/css" xmlns="http://www.w3.org/1999/html">#}
+{#    <link href="jquery-tagselector.css" rel=stylesheet>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>#}
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>#}
+{#    <script src="jquery-tagselector.js"></script>#}
+
+    <script>
+    $(function() {
+
+        var tags = [
+            { id: 42, toString: function() { return 'jQuery'; } },
+            { id: 31, toString: function() { return 'Python'; } },
+            { id: 25, toString: function() { return 'HTML'; } },
+            { id: 83, toString: function() { return 'PHP'; } },
+            { id: 40, toString: function() { return 'ASP.NET MVC'; } },
+            { id: 25, toString: function() { return 'CSS'; } },
+            { id: 66, toString: function() { return 'JavaScript'; } },
+            { id: 87, toString: function() { return 'C#'; } },
+            { id: 28, toString: function() { return 'D'; } },
+            { id: 91, toString: function() { return 'Java'; } },
+            { id: 10, toString: function() { return 'Ruby'; } },
+        ];
+        $('#tags').tagSelector(tags, 'tags');
+
+    });
+    </script>
+
+
+
+
+{% block content %}
+
+{#        <div id=tags class=tagSelector style="width:300px">#}
+{#	        <span class=tag>#}
+{#		    jQuery <a>×</a>#}
+{#		   <input name=tags type=hidden value=42>#}
+{#	       </span>#}
+{#	       <input type=text>#}
+{#        </div>#}
+
+
+
+    <form method="post" id="aportacio">
+        {% csrf_token %}
+    <input id="url" name="url" type="hidden">
+{#        <p>#}
+{#        <label for="id_titol"></label>#}
+{#        <input id="id_titol" type="text" name="titol" maxlength="40">#}
+{#        </p>#}
+{#        <p>#}
+{#        <label for="id_entradilla">#}
+{#        Entradilla:#}
+{#        </label>#}
+{#        <textarea id="id_entradilla" rows="10" name="entradilla" cols="40" class="entradeta"></textarea>#}
+{#        </p>#}
+{#        <div id="enlaces">#}
+{#        <p>#}
+{#        <label for="id_text">#}
+{#        Text:#}
+{#        </label>#}
+{#        <textarea id="id_text" name="url" rows="10" cols="40" class="hidden_id"></textarea>#}
+{#        </p>#}
+{#        <div id="result1"></div>#}
+{#        <div id="result2"></div>#}
+{#        <div id="result3"></div>#}
+{#        <div id="result4"></div>#}
+{#        </div>#}
+{#        <p>#}
+{#        <label for="id_tags">#}
+{#        Tags:#}
+{#        </label>#}
+{#        <input id="id_tags" class="autocomplete autocomplete-light-text-widget" type="text" placeholder="Type some text to search in this autocomplete" name="tags" maxlength="255" data-widget-bootstrap="text" data-autocomplete-url="/autocomplete/TagAutocomplete/" data-autocomplete-choice-selector="[data-value]" autocomplete="off" data-widget-ready="1"></input>#}
+{#        </p>#}
+
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+                <p>
+                {{ field.label }}
+                {{ field.errors }}
+                {{ field.help_text }}
+                {{ field }}</p>
+                {% if field.name == 'text' %}
+{#            <form id="form_links">#}
+                    <b>Enllaços:</b><br>
+{% for link in object.links.get_query_set %}
+    {{ link.url|oembed }} <br>
+{% endfor %}
+        <div id="result1"></div>
+        <div id="result2"></div>
+        <div id="result3"></div>
+        <div id="result4"></div>
+
+{#                    <input id="p_result1" type="hidden">#}
+{#                    <input id="p_result1" type="hidden">#}
+{#                    <input id="p_result1" type="hidden">#}
+{#                    </form>#}
+                {% endif %}
+            {% endfor %}
+
+
+
+        <input type="submit" value="OK">
+
+
+    </form>
+
+
+
+{% endblock %}
+
+
+
+

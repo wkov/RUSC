@@ -1,0 +1,122 @@
+TROBAR FEINA a Espanya
+
+fira sta eulali 689 50 91 61
+farinaaaaaaaaaaaa
+
+dissabte Birraaa -> he dit que hi vaig
+
+toni petit    656405437
+
+cami de can girona
+
+joan plans : avda piera, la botigueta baixant cap al pont, abans del pont a la dreta i veuré el celler
+
+ett's lleida
+
+marques d'alella: lluis
+
+
+acabar etiquetes
+
+botó compartir
+
+valoració(rating) dels comentaris(debats)
+
+tots els camps dels formularis amb model inheritance
+
+la entradilla es el summarize del textbox
+
+resumir els textos de les aportacions per extreure paraules clau del text, les quals tractariem com a tags
+
+classificar els enllaços que extreiem dels textbox
+
+buscador complet
+
+les aportacionsxTags son buscades amb el nom després de ferli slugify, aleshoes no troba ni tags amb majuscules ni amb accents ni apostrofs...
+
+crear les seccions
+
+missatges interns
+
+alertes?
+
+
+resums
+
+punt de vista del moderador complet introduintlo a les modificaccions (podem utilitzar codi de la moderació de "postman"
+
+posibilitat de contestar a traves del mail directament
+
+estadistiques
+
+
+forma de recompensar els usuaris per participar (diners dels anunciants?)
+
+fer el chat/missatges privats amb arbre també
+
+un exemple dels primers per a mostrar que es un XSCV és fer una XSCV on el objectiu central siguin les xarxes socials que vol la gent i que es debati sobre el que es vol per a després fer-ho
+
+utilitzar la XSCV per a fer congressos (trobades) temátiques en entorn virtual (potser combinant amb presencial) de durada x(des de 1 setmana a 1 mes o infinit). preparar tot el métode del lafh de convidar a les persones oportunes, experts, etc...
+
+
+hi ha multitud de temes d'actualitat (i no)dels que es podria obrir una RUSC, exemples: ebola, mms, chemtrails, estevia...
+
+oferir RVSC a totes les assemblees de Guanyem que hi hagi arreu...
+
+fer que el camp "job" del UserProfile sigui múltiple!!!
+
+un bon nom per la XVSC o RVSC, pot ser....RUSC (d'abelles ejejeje), podriem escriureu com una U que sembli una V. el símbol de la xarxa poden ser les abelles... construir coneixement com elles!!  
+també es odria dir Rusco o Ruscus(llatí) i tenir la imatge del galzeran
+
+www.ruscus.com (està lliure)
+
+12,5% ... ni en broma
+
+-------------------------------------------------------------------
+Capas de las redes sociales virtuales:
+
+Redes de marketing -> Facebok...
+
+medio camino : Reddit Twitter
+
+Redes de conocimiento -> stack overflow, wikipedia
+--------------------------------------------------------------------
+
+
+dintres de cada XSCV hi ha:
+Temes
+Seccions --> (m'ho peto en la versio 0.1, a canvi hi han els tags)
+Aportacions Resums Agenda
+Debats                 |       Events
+                            |
+Dintres de Resums, aplicant els filtres que millor funcionin, summaritzem els seguents continguts:
+/ estadisticas / mapas(NetworkX) / tendencias(tags)? / boletines
+
+expulsats de la versio 0.1: bibliografia(recursos)  /  divisió en secciones
+
+en el base.html lateral, hauria de sortir la customitzacio de l'algoritme i un filtre amb els camps básics:
+audiovisual / textos / imatges / enllaços / audios
+
+
+	HAIG D'INSTALAR EL GRAPHVIZ PER A QUE FUNCIONI EL PYGRAPHVIZ QUE ES LO MISMO QUE EL NETWORKX. LA FEINA ESTÁ CLARA
+
+
+
+
+a les 12 entrevista amb el valero, demà
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

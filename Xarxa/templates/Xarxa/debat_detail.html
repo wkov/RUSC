@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>
+        {#    <a href="{{ object.post }}"> #}
+        Títol:    {{ object.titol }}
+
+        {#</a>#}
+    </h2>
+
+    Entradeta: {{ object.entradilla }}<br>
+    {% if object.autor == user %}
+        <a class="button" href="{% url 'debat_update' object.id %}">MODIFICAR</a>
+    {% endif %}
+{% endblock %}

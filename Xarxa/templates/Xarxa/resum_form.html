@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {#<input type="hidden" name="fornada" value={{ obj.pk }} />#}
+        {#  <input type="text" id="datepicker" size="30">#}
+
+        <input type="submit" value="OK">
+    </form>
+{% endblock %}

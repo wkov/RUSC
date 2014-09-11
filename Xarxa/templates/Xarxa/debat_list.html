@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        {% for thing in object_list %}
+            {% for branch, obj in thing.as_tree %}
+                {% if obj %}
+                    {% if not obj.parent %}
+{# Aqui posem el codi que es correspon amb el comentari que genera l'aportacio, recuperem els seus valors i tota la #}
+{#  gestió dels vots en ajax seguin el model d'aportacio #}
+                                <form method="post" action="{% url 'vote' %}" class="vote_form">
+                                <li> [{{ ap_vots_total }}]
+                                {% csrf_token %}
+                                 <input type="hidden" id="id_aportacio" name="aportacio" class="hidden_id" value="{{ obj.aportacio.pk }}" />
+                                 <input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}" />
+                                 {% if not user.is_authenticated %}
+                                    <button disabled title="Please login to vote">+</button>
+                                 {% elif user.pk not in ap_voted_by %}
+                                    <button>+</button>
+                                 {% else %}
+                                    <button>-</button>
+                                 {% endif %}     <b>{{ obj.aportacio.titol }}</b>   {{ obj.aportacio.autor }}
+                                    <div class="title"></div>
+
+                                            {{ obj.aportacio.entradilla }}
+
+                                        <div>
+                                            <a class="button" href="{% url 'debat_create' obj.aportacio.id obj.id %}">Respondre | </a>
+                                            <a class="button" href="{% url 'aportacio_detail' obj.aportacio.id %}">Detall | </a>
+                                            {% if aportacio.autor == user %}
+                                                <a class="button" href="{% url 'aportacio_update' obj.aportacio.id %}">Modificar | </a>
+                                            {% endif %}
+                                            <a class="button">[{{ obj.aportacio.debats.count }}]Comentaris | Comparteix |</a>
+                                        </div>
+                                </li>
+                                </form>
+
+                    {% elif obj.parent %}
+
+                    <form method="post" action="{% url 'votedebat' %}" class="votedebat_form">
+                    <li>[{{ obj.votes }}]
+                        {% csrf_token %}
+                         <input type="hidden" id="id_debat" name="debat" class="hidden_id" value="{{ obj.pk }}" />
+                         <input type="hidden" id="id_voter" name="voter" class="hidden_id" value="{{ user.pk }}" />
+                         {% if not user.is_authenticated %}
+                            <button disabled title="Please login to vote">+</button>
+                         {% elif obj.pk not in voted %}
+                            <button>+</button>
+                         {% else %}
+                            <button>-</button>
+                         {% endif %}<b>{{ obj.titol }}</b>  {{ obj.autor }}
+                            <div class="title"></div>
+                                    {{ obj.text }}
+                            <div>
+                                    {% if obj.autor == user %}
+                                     <a class="button" href="{% url 'debat_update' obj.id %}">Modificar</a>
+                                    {% endif %}
+                                     <a class="button" href="{% url 'debat_create' obj.aportacio.id obj.id %}">Respon</a>
+                            </div>
+                    {% endif %}
+                            {% if branch %}
+                                <ul>
+                            {% else %}
+                                </li>
+                            {% endif %}
+                    {% else %}
+                        {% if branch %}
+                                </ul>
+                        {% endif %}
+                    {% endif %}
+                </form>
+            {% endfor %}
+        {% endfor %}
+{% endblock %}

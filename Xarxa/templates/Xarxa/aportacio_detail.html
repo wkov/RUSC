@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load tagging_tags %}
+{% load micawber_tags %}
+{% load embed_video_tags %}
+
+
+{% block content %}
+    <h2>
+        {#    <a href="{{ object.post }}"> #}
+        {{ object.titol }}
+
+        {#</a>#}
+    </h2>
+
+{#<div class="oembed">#}
+
+<b> entradilla:</b> {{ object.entradilla|oembed }} <br>
+
+
+<b> text: </b>  {{ object.text|oembed }}<br>
+
+
+
+<b>metadata:</b>
+<textarea cols=50 rows=5>
+{{ object.text|extract_oembed }}
+</textarea> <br>
+
+{#{% for url, metadata in object.entradilla|extract_oembed_html:"80x80" %}#}
+{#  <img src="{{ metadata.thumbnail_url }}" />#}
+{#    {{ url|oembed }}#}
+{#{% endfor %}#}
+<b>Enllaços:</b><br>
+{% for link in object.links.get_query_set %}
+    {{ link.url|oembed }} <br>
+{% endfor %}
+
+
+{#</div>#}
+
+{#<iframe width="459" height="344" src="http://www.youtube.com/embed/nda_OSWeyn8?feature=oembed" frameborder="0" allowfullscreen></iframe> #}
+{# Inici de l'encaixement del video #}
+{#    {% video object.video as my_video %}#}
+{#      <pre>#}
+{#        Backend: {{ my_video.backend }}#}
+{#        URL: {{ my_video.url }}#}
+{#        Code: {{ my_video.code }}#}
+{#        Thumbnail: {{ my_video.thumbnail }}#}
+{#        HTTPS: {% if my_video.protocol == 'https' %}Yes{% else %}No{% endif %}</pre>#}
+{##}
+{#      {% video my_video "medium" %}#}
+{#    {% endvideo %}#}
+{# Fi de l'encaixement del video #}
+
+    {% if object.autor == user %}
+        <a class="button" href="{% url 'aportacio_update' object.id %}">MODIFICAR</a>
+    {% endif %}
+    <h3><p>TAGS:</p></h3>
+        {{ object.tags }}
+    <h3><p>APORTACIONS RELACIONADES:</p></h3>
+    {% for aux in items_related %}
+        <a class="button" href="{% url 'aportacio_detail' aux.id %}"> {{ aux.titol }} |</a>
+    {% endfor %}
+      <h3><p>Compartir:</p></h3>
+
+{# https://dev.twitter.com/docs/tweet-button #}
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-related="jasoncosta" data-lang="en" data-size="large" data-count="none">Tweet</a>
+{#  reddit #}
+    <a href="http://www.reddit.com/submit" onclick="window.location = 'http://www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false">
+        <img src="http://www.reddit.com/static/spreddit10.gif" alt="submit to reddit" border="0" /> </a>
+{% endblock %}
+

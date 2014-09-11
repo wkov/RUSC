@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>
+        {#    <a href="{{ object.post }}"> #}
+        Títol:    {{ object.titol }}
+
+        {#</a>#}
+    </h2>
+
+
+    <a class="button" href="{% url 'resum_update' object.id %}">MODIFICAR</a>
+
+{% endblock %}
