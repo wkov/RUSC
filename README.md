@@ -114,7 +114,7 @@ python manage.py runserver
 
  > ```bash
  ssh-keygen -t rsa -C "your_email@example.com"
- eval "$(ssh-agent -s)
+ eval "$(ssh-agent -s)"
  ssh-add ~/.ssh/id_rsa
  pbcopy < ~/.ssh/id_rsa.pub
  > ```
