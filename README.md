@@ -6,7 +6,7 @@ RUSC
 Package  | Version
 ------------- | -------------
 Python  | 2.7.3
-Django  | *unknown*
+Django  | 1.5 final
 
 #### Gitignore
 Please add the following files and extensions to the list to be ignored by Git when pushing changes.
