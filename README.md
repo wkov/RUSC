@@ -2,16 +2,17 @@ RUSC
 ====
 [...] description goes here [...]
 
-## Dependencies:
+### Dependencies:
 Package  | Version
 ------------- | -------------
 Python  | 2.7.3
 Django  | *unknown*
 
-## Changelog
+### Changelog
+Empty
 
-## Installation
-### OSX 10.9 Devel Environment
+### Installation
+#### OSX 10.9 Devel Environment
 * Make *~/Library* directory visible
  > Go to Home folder pressing `shift+cmd+H`
 
@@ -19,6 +20,7 @@ Django  | *unknown*
 
 * Bash profile setup
  > `vim ~/.bash_profile` and add:
+
  > ```bash
 # Set architecture flags
 export ARCHFLAGS="-arch x86_64"
@@ -27,12 +29,13 @@ export PATH=/usr/local/bin:$PATH
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
 ```
+
  > `. ~/.bash_profile`
 
 
 * Setup the compiler installing latest **XCode Command Line Interface**
 
-### Homebrew
+#### Homebrew
 * Install Homebrew
  > `ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`
 
@@ -54,7 +57,7 @@ test -f ~/.bashrc && source ~/.bashrc
 
 [Help reference](http://hackercodex.com/guide/mac-osx-mavericks-10.9-configuration/)
 
-### Python and Django
+#### Python and Django
 > Will be using Homebrew Python instead of OS X due to system updates.
 
 > *pip* and *easy_install* are installed by default with Homebrew Python.
@@ -98,7 +101,7 @@ python manage.py runserver
 
 [Help reference Django](http://www.computersnyou.com/2960/2014/02/setup-django-virtualenv-macosx-mavericks/)
 
-### Configuring Git for Github
+#### Configuring Git for Github
 * Set up credentials
  > ```bash
  git config --global user.name "user_name"
