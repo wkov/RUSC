@@ -2,7 +2,7 @@ RUSC
 ====
 [...] description goes here [...]
 
-#### Dependencies:
+#### Dependencies
 Package  | Version
 ------------- | -------------
 Python  | 2.7.3

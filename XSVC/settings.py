@@ -135,27 +135,26 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.syndication',
+    'django_countries',
     'Xarxa',
     # comment the next line to disable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'XSVC',
-
     'registration',
     'notification',
     'tagging',
     'micawber.contrib.mcdjango',  # Micawber CODE, DOCS: https://groups.google.com/forum/#!topic/oembed/1X7aj6t-Bzk
     'autocomplete_light',
     'postman',
-    'django_countries',
     'embed_video',
     'django_filters',
     'django_mailbox',
     'social_auth',
-
-
+    #nltk - The Natural Language Toolkit
 )
+# TODO: create a requirements.txt file: pip install -r requirements.txt
 
 
 from django.core.urlresolvers import reverse_lazy
