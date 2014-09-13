@@ -28,10 +28,9 @@ export ARCHFLAGS="-arch x86_64"
 export PATH=/usr/local/bin:$PATH
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
-```
+ > ```
 
  > `. ~/.bash_profile`
-
 
 * Setup the compiler installing latest **XCode Command Line Interface**
 
@@ -53,7 +52,7 @@ test -f ~/.bashrc && source ~/.bashrc
  if [ -f $(brew --prefix)/etc/bash_completion ]; then
      . $(brew --prefix)/etc/bash_completion
  fi
- ```
+ > ```
 
 [Help reference](http://hackercodex.com/guide/mac-osx-mavericks-10.9-configuration/)
 
@@ -106,7 +105,7 @@ python manage.py runserver
  > ```bash
  git config --global user.name "user_name"
  git config --global user.email "user_email@example.com"
-```
+ > ```
 
 * Generate SSH Key
  > `ls -al ~/.ssh`
@@ -118,7 +117,7 @@ python manage.py runserver
  eval "$(ssh-agent -s)
  ssh-add ~/.ssh/id_rsa
  pbcopy < ~/.ssh/id_rsa.pub
- ```
+ > ```
 
 * Go to *Github account > Configuration > SSH Keys > Add*
 
