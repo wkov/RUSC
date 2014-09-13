@@ -8,8 +8,15 @@ Package  | Version
 Python  | 2.7.3
 Django  | *unknown*
 
-#### Changelog
-Empty
+#### Gitignore
+Please add the following files and extensions to the list to be ignored by Git when pushing changes.
+Need to create a .gitignore file in the root of your repo:
+```
+*.pyc
+*.pyo
+*.idea
+*.DS_Store
+```
 
 ## Installation
 #### OSX 10.9 Devel Environment
