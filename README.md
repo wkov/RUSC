@@ -2,16 +2,16 @@ RUSC
 ====
 [...] description goes here [...]
 
-### Dependencies:
+#### Dependencies:
 Package  | Version
 ------------- | -------------
 Python  | 2.7.3
 Django  | *unknown*
 
-### Changelog
+#### Changelog
 Empty
 
-### Installation
+## Installation
 #### OSX 10.9 Devel Environment
 * Make *~/Library* directory visible
  > Go to Home folder pressing `shift+cmd+H`
