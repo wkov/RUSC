@@ -3,10 +3,34 @@ RUSC
 [...] description goes here [...]
 
 #### Dependencies
-Package  | Version
-------------- | -------------
-Python  | 2.7.3
-Django  | 1.5 final
+Package  | Version | Installation
+------------- | ------------- | -------------
+Python  | 2.7.3 |
+Django  | 1.5 final | pip install django==1.5
+social_auth | 0.7.23 | pip install django-social-auth==0.7.23
+django_mailbox | ? | pip install django-mailbox
+django_filters | 0.7 | pip install django-filter==0.7
+embed_video | 1.0.0 dev | pip install django-embed-video
+postman | 3.1.0 | pip install django-postman==3.1.0
+autocomplete_light | ? | pip install django-autocomplete-light
+micawber | ? | pip install micawber
+tagging | 0.3.1 | pip install django-tagging==0.3.1
+notification | 0.1.5 final | pip install django-notification==0.1.5
+registration | 1.0.0 final | pip install django-registration==1.0.0
+django_countries | ? | pip install django-countries
+pygraphviz | ? | pip install pygraphviz (*1)
+
+(*1) Follow these steps to install pygraphviz on OS X:
+> `brew install graphviz`
+> *pygraphviz depends on graphviz and its a wrapper for python*
+
+> `brew install pkg-config`
+> *fixes the "Error locating graphviz" exception when installing*
+
+> `pip install pygraphviz`
+
+If doesn't work after these steps try to do the following:
+`export PKG_CONFIG_PATH=/usr/local/Cellar/graphviz/2.38.0/lib/pkgconfig`
 
 #### Gitignore
 Please add the following files and extensions to the list to be ignored by Git when pushing changes.
@@ -14,7 +38,7 @@ Need to create a .gitignore file in the root of your repo:
 ```
 *.pyc
 *.pyo
-*.idea
+.idea/
 *.DS_Store
 ```
 
@@ -40,6 +64,8 @@ test -f ~/.bashrc && source ~/.bashrc
  > `. ~/.bash_profile`
 
 * Setup the compiler installing latest **XCode Command Line Interface**
+ > Open XCode | Menu XCode | Open Developer Tools | More Developer Tools | Download CLI
+ > *Checked for XCode 5.1.1 and OSX 10.9*
 
 #### Homebrew
 * Install Homebrew
@@ -89,6 +115,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 ```
+then:
 
 ```
 . ~/.bash_profile
@@ -102,6 +129,9 @@ django-admin.py startproject mysite
 cd ../mysite
 python manage.py runserver
 ```
+Be sure to use the Homebrew version instead of OS X version running:
+`which python`
+and any result without */usr/bin/...* is OK.
 
 [Help reference Python](http://hackercodex.com/guide/python-development-environment-on-mac-osx/)
 
