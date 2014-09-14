@@ -22,15 +22,18 @@ pygraphviz | ? | pip install pygraphviz (*1)
 
 (*1) Follow these steps to install pygraphviz on OS X:
 > `brew install graphviz`
+
 > *pygraphviz depends on graphviz and its a wrapper for python*
 
 > `brew install pkg-config`
+
 > *fixes the "Error locating graphviz" exception when installing*
 
 > `pip install pygraphviz`
 
-If doesn't work after these steps try to do the following:
-`export PKG_CONFIG_PATH=/usr/local/Cellar/graphviz/2.38.0/lib/pkgconfig`
+> If doesn't work after these steps try to do the following:
+
+> `export PKG_CONFIG_PATH=/usr/local/Cellar/graphviz/2.38.0/lib/pkgconfig`
 
 #### Gitignore
 Please add the following files and extensions to the list to be ignored by Git when pushing changes.
@@ -130,7 +133,9 @@ cd ../mysite
 python manage.py runserver
 ```
 Be sure to use the Homebrew version instead of OS X version running:
+
 `which python`
+
 and any result without */usr/bin/...* is OK.
 
 [Help reference Python](http://hackercodex.com/guide/python-development-environment-on-mac-osx/)
