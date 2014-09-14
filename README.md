@@ -19,6 +19,7 @@ notification | 0.1.5 final | pip install django-notification==0.1.5
 registration | 1.0.0 final | pip install django-registration==1.0.0
 django_countries | ? | pip install django-countries
 pygraphviz | ? | pip install pygraphviz (*1)
+nltk | 3.0.0b2 | pip install nltk==3.0.0b2
 
 (*1) Follow these steps to install pygraphviz on OS X:
 > `brew install graphviz`
