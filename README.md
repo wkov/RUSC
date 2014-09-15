@@ -47,7 +47,7 @@ Need to create a .gitignore file in the root of your repo:
 *.pyc
 *.pyo
 .idea/
-*.DS_Store
+.DS_Store
 Thumbs.db
 ```
 
