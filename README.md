@@ -23,7 +23,7 @@ nltk | 3.0.0b2 | pip install nltk==3.0.0b2
 
 For installing dependencies recursively it is as simple as generating a *requirements.txt* file with all the modules listed and execute:
 
-`pip install -r requirements.txt
+`pip install -r requirements.txt`
 
 (*1) Follow these steps to install pygraphviz on OS X:
 > `brew install graphviz`
