@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/bootstrap.css" media="screen" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <a class="brand" href="#">RUSC</a>
+
+                    <form class="navbar-form pull-left">
+                        <input class="input-large" type="text" placeholder="Cerca en {{nom_xarxa}}">
+                    </form>
+
+                    <ul class="nav pull-right">
+                        <li><a href="#"><i class="icon-user"></i> <small><strong>admin</strong></small></a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/"><i class="icon-pencil"></i> <b class="caret"></b></a>
+
+                            <ul class="dropdown-menu" role="menu" aria-labelled-by="dLabel">
+                                <li><a tabindex="-1" href="#"><small><i class="icon-bookmark"></i> una nova aportacio</small></a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#"><small><i class="icon-tags"></i> un nou resum</small></a></li>
+                            </ul>
+                        </li>
+                        <li><a class="tultip" href="#" data-toggle="tooltip" data-placement="bottom" title="Notificacions" data-animation="false"><span class="badge badge-info"><i class="icon-bell icon-white"></i> 19</span></a></li>
+                        <li><a class="tultip" href="#" data-toggle="tooltip" data-placement="bottom" title="Missatges" data-animation="false"><span class="badge badge-inverse"><i class="icon-inbox icon-white"></i> 7</spsan></a></li>
+                        <li><a class="tultip" href="#" data-toggle="tooltip" data-placement="bottom" title="Surt" data-animation="false"><i class="icon-off"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.tultip').tooltip();
+        });
+    </script>
+</html>
