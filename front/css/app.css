@@ -5,5 +5,8 @@ body { padding-top: 40px; }
 
 .navigation { padding: 20px 0; border-bottom: 1px solid #CCCCCC; }
 
+.equalizer-controls { width: 260px; }
+.equalizer-controls-slider { padding: 0 10px 0 10px; }
+.equalizer-controls-apply { padding: 0 15px 15px 0; }
 .sldr { width: 100px; }
-.sldr-label { padding-right: 15px; }
+.sldr-label { padding-right: 15px; width: 60px; max-widht: 60px; }

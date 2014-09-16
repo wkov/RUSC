@@ -67,18 +67,42 @@
                 </div>
 
                 <div class="dropdown pull-right">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-filter"></i> Filtres <span class="caret"></span></a>
+                    <a class="btn dropdown-toggle" id="dFilter" role="button" data-toggle="dropdown" data-target="#" href="/"><i class="icon-filter"></i> Filtres <b class="caret"></b></a>
+                    <div class="equalizer-controls dropdown-menu" role="menu" aria-labelled-by="dFilter">
+                        <p class="nav-header"><small>Ajusta els parametres per l'algoritme de cerca</small></p>
+                        <div class="divider"></div>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-1" class="sldr-label pull-left"><small>Gravetat</small></label>
+                            <input id="sldr-kwd-1" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-1">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-2" class="sldr-label pull-left"><small>Tolerancia</small></label>
+                            <input id="sldr-kwd-2" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-2">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-3" class="sldr-label pull-left"><small>Llindar</small></label>
+                            <input id="sldr-kwd-3" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-3">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-4" class="sldr-label pull-left"><small>Vida</small></label>
+                            <input id="sldr-kwd-4" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-4">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-5" class="sldr-label pull-left"><small>Vots</small></label>
+                            <input id="sldr-kwd-5" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-5">5</span>
+                        </p>
+                        <div class="divider"></div>
+                        <p class="equalizer-controls-apply">
+                            <a class="pull-right" href="#"><i class="icon-ok"></i> Aplicar</a>
+                        </p>
+                    </div>
                 </div>
-                <!--<div id="equalizer">
-                    <p>
-                        <label for="sldr-kwd-1" class="sldr-label pull-left"><small>Keyword 1</small></label>
-                        <input id="sldr-kwd-1" class="sldr" type="text" value="">
-                    </p>
-                    <p>
-                        <label for="sldr-kwd-2" class="sldr-label pull-left"><small>Keyword 2</small></label>
-                        <input id="sldr-kwd-2" class="sldr" type="text" value="">
-                    </p>
-                </div>-->
+
             </div>
         </nav>
 
@@ -97,28 +121,22 @@
             // tooltips
             $('.ttip').tooltip();
 
-            /* popovers
-            $('#equalizer-pover').popover({
-                html: true,
-                title: "<small>Customitza l'algoritme de mostra del contingut a la xarxa</small>",
-                content: (function() {
-                    var html = '<div id="equalizer"><p><label for="sldr-kwd-1" class="sldr-label pull-left"><small>Keyword 1</small></label><input id="sldr-kwd-1" class="sldr" type="text" value=""></p><p></p></div>'
-                    return html;
-                })
-            }).promise().done(function() {
-                console.log( $('#equalizer').html() );
+            // sliders
+            $('.sldr').slider({
+                min: 0,
+                max: 10,
+                value: 5,
+                step: 1,
+                orientation: 'horizontal',
+                tooltip: 'hide'
+            }).on('slide', function(ev) {
+                $("[data-sldr-id*='" + this.id + "']").html(ev.value);
+            });
 
-                // sliders
-                $('.sldr').slider({
-                    min: 0,
-                    max: 10,
-                    value: 5,
-                    step: 1,
-                    orientation: 'horizontal'
-                });
-
-                console.log("2nd promise");
-            });*/
+            // dropdowns
+            $('.equalizer-controls').click(function(e) {
+                e.stopPropagation();
+            });
         });
     </script>
 </html>
