@@ -1,0 +1,9 @@
+body { padding-top: 40px; }
+
+.categories { background-color: #F4F4F4; }
+.categories-list { margin-bottom: 0; padding-top: 10px; padding-bottom: 5px; }
+
+.navigation { padding: 20px 0; border-bottom: 1px solid #CCCCCC; }
+
+.sldr { width: 100px; }
+.sldr-label { padding-right: 15px; }

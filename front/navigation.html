@@ -5,11 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="css/bootstrap.css" media="screen" rel="stylesheet" />
+        <link href="css/bootstrap-slider.css" media="screen" rel="stylesheet" />
+        <link href="css/app.css" media="screen" rel="stylesheet" />
     </head>
 
     <body>
 
-        <div class="navbar navbar-fixed-top">
+        <header class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
 
@@ -21,32 +23,104 @@
 
                     <ul class="nav pull-right">
                         <li><a href="#"><i class="icon-user"></i> <small><strong>admin</strong></small></a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/"><i class="icon-pencil"></i> <b class="caret"></b></a>
-
-                            <ul class="dropdown-menu" role="menu" aria-labelled-by="dLabel">
-                                <li><a tabindex="-1" href="#"><small><i class="icon-bookmark"></i> una nova aportacio</small></a></li>
-                                <li class="divider"></li>
-                                <li><a tabindex="-1" href="#"><small><i class="icon-tags"></i> un nou resum</small></a></li>
-                            </ul>
-                        </li>
-                        <li><a class="tultip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Notificacions"><span class="badge badge-info"><i class="icon-bell icon-white"></i> 19</span></a></li>
-                        <li><a class="tultip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Missatges"><span class="badge badge-inverse"><i class="icon-inbox icon-white"></i> 7</spsan></a></li>
-                        <li><a class="tultip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Surt"><i class="icon-off"></i></a></li>
+                        <li><a class="ttip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Notificacions"><span class="badge badge-info"><i class="icon-bell icon-white"></i> 19</span></a></li>
+                        <li><a class="ttip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Missatges"><span class="badge badge-inverse"><i class="icon-inbox icon-white"></i> 7</span></a></li>
+                        <li><a class="ttip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Surt"><i class="icon-off"></i></a></li>
                     </ul>
 
                 </div>
             </div>
+        </header>
+
+        <div class="container-fluid categories">
+            <div class="container">
+
+                <ul class="inline categories-list">
+                    <li><a href="#"><small>TOT</small></a></li>
+                    <li><a href="#"><small>FURNITURE</small></a></li>
+                    <li><a href="#"><small>VERD</small></a></li>
+                    <li><a href="#"><small>BLAU</small></a></li>
+                    <li><a href="#"><small>GROC</small></a></li>
+                    <li><a href="#"><small>VERMELL</small></a></li>
+                </ul>
+
+            </div>
         </div>
+
+        <nav class="container-fluid navigation">
+            <div class="container">
+
+                <div class="btn-group">
+                    <button class="btn"><i class="icon-th-list"></i> Aportacions</button>
+                    <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><small><i class="icon-plus"></i> una nova aportacio</small></a></li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn"><i class="icon-tags"></i> Resums</button>
+                    <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><small><i class="icon-plus"></i> un nou resum</small></a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown pull-right">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-filter"></i> Filtres <span class="caret"></span></a>
+                </div>
+                <!--<div id="equalizer">
+                    <p>
+                        <label for="sldr-kwd-1" class="sldr-label pull-left"><small>Keyword 1</small></label>
+                        <input id="sldr-kwd-1" class="sldr" type="text" value="">
+                    </p>
+                    <p>
+                        <label for="sldr-kwd-2" class="sldr-label pull-left"><small>Keyword 2</small></label>
+                        <input id="sldr-kwd-2" class="sldr" type="text" value="">
+                    </p>
+                </div>-->
+            </div>
+        </nav>
+
+        <section></section>
+
+        <footer></footer>
 
     </body>
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.tultip').tooltip();
+            // tooltips
+            $('.ttip').tooltip();
+
+            /* popovers
+            $('#equalizer-pover').popover({
+                html: true,
+                title: "<small>Customitza l'algoritme de mostra del contingut a la xarxa</small>",
+                content: (function() {
+                    var html = '<div id="equalizer"><p><label for="sldr-kwd-1" class="sldr-label pull-left"><small>Keyword 1</small></label><input id="sldr-kwd-1" class="sldr" type="text" value=""></p><p></p></div>'
+                    return html;
+                })
+            }).promise().done(function() {
+                console.log( $('#equalizer').html() );
+
+                // sliders
+                $('.sldr').slider({
+                    min: 0,
+                    max: 10,
+                    value: 5,
+                    step: 1,
+                    orientation: 'horizontal'
+                });
+
+                console.log("2nd promise");
+            });*/
         });
     </script>
 </html>
+
+<!-- TODO: remove <small> and set smaller font-size. mantain if semantic. -->
