@@ -1,4 +1,5 @@
 body { padding-top: 40px; }
+footer { border-top: 1px solid #F0F0F0; }
 
 .categories { background-color: #F4F4F4; }
 .categories-list { margin-bottom: 0; padding-top: 5px; padding-bottom: 5px; }
