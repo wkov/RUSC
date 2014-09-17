@@ -1,9 +1,6 @@
 body { padding-top: 40px; }
 footer { border-top: 1px solid #F0F0F0; }
 
-.categories { background-color: #F4F4F4; }
-.categories-list { margin-bottom: 0; padding-top: 5px; padding-bottom: 5px; }
-
 .navigation { padding: 20px 0; border-bottom: 1px solid #CCCCCC; }
 
 .equalizer-controls { width: 260px; }
@@ -11,3 +8,9 @@ footer { border-top: 1px solid #F0F0F0; }
 .equalizer-controls-apply { padding: 0 15px 15px 0; }
 .sldr { width: 100px; }
 .sldr-label { padding-right: 15px; width: 60px; max-widht: 60px; }
+
+.categories { background-color: #F4F4F4; }
+.categories-list { margin-bottom: 0; padding-top: 5px; padding-bottom: 5px; }
+
+.treeview { padding-top: 20px; padding-bottom: 20px; }
+.treeview-topic { margin-bottom: 20px; border-bottom: 1px solid #CCCCCC; }

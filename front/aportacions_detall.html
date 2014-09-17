@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+
+        <link href="css/bootstrap.css" media="screen" rel="stylesheet" />
+        <link href="css/bootstrap-slider.css" media="screen" rel="stylesheet" />
+        <link href="css/app.css" media="screen" rel="stylesheet" />
+    </head>
+
+    <body>
+
+        <header class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+
+                    <a class="brand" href="#">RUSC</a>
+
+                    <form class="navbar-form pull-left">
+                        <input class="input-large" type="text" placeholder="Cerca en {{nom_xarxa}}">
+                    </form>
+
+                    <ul class="nav pull-right">
+                        <li><a href="#"><i class="icon-user"></i> <small><strong>admin</strong></small></a></li>
+                        <li><a class="ttip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Notificacions"><span class="badge badge-info"><i class="icon-bell icon-white"></i> 19</span></a></li>
+                        <li><a class="ttip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Missatges"><span class="badge badge-inverse"><i class="icon-inbox icon-white"></i> 7</span></a></li>
+                        <li><a class="ttip" href="#" data-toggle="tooltip" data-placement="bottom" data-animation="false" title="Surt"><i class="icon-off"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="container-fluid navigation">
+            <div class="container">
+
+                <div class="btn-group">
+                    <button class="btn"><i class="icon-th-list"></i> Aportacions</button>
+                    <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><small><i class="icon-plus"></i> una nova aportacio</small></a></li>
+                    </ul>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn"><i class="icon-tags"></i> Resums</button>
+                    <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><small><i class="icon-plus"></i> un nou resum</small></a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown pull-right">
+                    <a class="btn dropdown-toggle" id="dFilter" role="button" data-toggle="dropdown" data-target="#" href="/"><i class="icon-filter"></i> Filtres <b class="caret"></b></a>
+                    <div class="equalizer-controls dropdown-menu" role="menu" aria-labelled-by="dFilter">
+                        <p class="nav-header"><small>Ajusta els parametres per l'algoritme de cerca</small></p>
+                        <div class="divider"></div>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-1" class="sldr-label pull-left"><small>Gravetat</small></label>
+                            <input id="sldr-kwd-1" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-1">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-2" class="sldr-label pull-left"><small>Tolerancia</small></label>
+                            <input id="sldr-kwd-2" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-2">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-3" class="sldr-label pull-left"><small>Llindar</small></label>
+                            <input id="sldr-kwd-3" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-3">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-4" class="sldr-label pull-left"><small>Vida</small></label>
+                            <input id="sldr-kwd-4" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-4">5</span>
+                        </p>
+                        <p class="equalizer-controls-slider">
+                            <label for="sldr-kwd-5" class="sldr-label pull-left"><small>Vots</small></label>
+                            <input id="sldr-kwd-5" class="sldr" type="text" value="">
+                            <span class="badge pull-right" data-sldr-id="sldr-kwd-5">5</span>
+                        </p>
+                        <div class="divider"></div>
+                        <p class="equalizer-controls-apply">
+                            <a class="pull-right" href="#"><i class="icon-ok"></i> Aplicar</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <section>
+            <div class="container-fluid categories">
+                <ul class="inline categories-list">
+                    <li><a href="#"><small>TOT</small></a></li>
+                    <li><a href="#"><small>FURNITURE</small></a></li>
+                    <li><a href="#"><small>VERD</small></a></li>
+                    <li><a href="#"><small>BLAU</small></a></li>
+                    <li><a href="#"><small>GROC</small></a></li>
+                    <li><a href="#"><small>VERMELL</small></a></li>
+                </ul>
+            </div>
+
+            <div class="container-fluid treeview">
+                <div class="row-fluid">
+                    <!-- content -->
+                    <div class="span10">
+
+                        <!-- topic -->
+                        <div class="row treeview-topic">
+                            <ul class="span1 unstyled text-right">
+                                <li><a href="#"><i class="icon-arrow-up"></i></a></li>
+                                <li><a href="#"><i class="icon-arrow-down"></i></a></li>
+                            </ul>
+                            <div class="span10">
+                                <blockquote>
+                                    <p>U.S.A. president Obama does the <em>Michael Jackson</em> and turns his skin to white.</p>
+                                    <small class="muted">enviat fa 2 dies per <strong>jeronimusjackson</strong></small>
+                                    <a href="#" class="pull-left"><i class="icon-eye-open"></i></a>
+                                    <span class="muted">&nbsp;3416 comentaris</span>
+                                    <a href="#" class="muted">compartir</a>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <!-- /topic -->
+
+                        <!-- depth 1 -->
+                        <div class="row">
+                            <div class="span1 text-right"><a href="#"><i class="icon-ok"></i></a></div>
+                            <div class="span9">
+                                <p>
+                                    <a id="toggle-1" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                    <a href="#">jeronimusjackson</a>
+                                    <span class="muted">2596 punts</span>
+                                    <span class="muted">fa 4 mintus</span>
+                                </p>
+                                <p data-toggle-id="toggle-1">I like how he looks in the bottle cautiously like it's a barrel of a gun</p>
+
+                                <!-- depth 2 -->
+                                <div class="row" data-toggle-id="toggle-1">
+                                    <div class="span1 text-right"><a href="#"><i class="icon-ok"></i></a></div>
+                                    <div class="span8">
+                                        <p>
+                                            <a id="toggle-2" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                            <a href="#">wkov</a>
+                                            <span class="muted">124 punts</span>
+                                            <span class="muted">fa 1 minut</span>
+                                        </p>
+                                        <p data-toggle-id="toggle-2">He was making sure there wasn't another one in there.</p>
+                                    </div>
+                                </div>
+                                <!-- /depth 2 -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span1 text-right"><a href="#"><i class="icon-remove"></i></a></div>
+                            <div class="span9">
+                                <p>
+                                    <a id="toggle-3" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                    <a href="#">adriagil</a>
+                                    <span class="mutedd">0 punts</span>
+                                    <span class="muted">fa 2 dies</span>
+                                </p>
+                                <p data-toggle-id="toggle-3">That's a good prank. SECOND CORK! plonk</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span1 text-right"><a href="#"><i class="icon-ok"></i></a></div>
+                            <div class="span9">
+                                <p>
+                                    <a id="toggle-4" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                    <a href="#">jeronimusjackson</a>
+                                    <span class="muted">2596 punts</span>
+                                    <span class="muted">fa 4 mintus</span>
+                                </p>
+                                <p data-toggle-id="toggle-4">I like how he looks in the bottle cautiously like it's a barrel of a gun</p>
+
+                                <!-- depth 2 -->
+                                <div class="row" data-toggle-id="toggle-4">
+                                    <div class="span1 text-right"><a href="#"><i class="icon-ok"></i></a></div>
+                                    <div class="span8">
+                                        <p>
+                                            <a id="toggle-5" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                            <a href="#">wkov</a>
+                                            <span class="muted">124 punts</span>
+                                            <span class="muted">fa 1 minut</span>
+                                        </p>
+                                        <p data-toggle-id="toggle-5">He was making sure there wasn't another one in there.</p>
+
+                                        <!-- depth 3 -->
+                                        <div class="row" data-toggle-id="toggle-5">
+                                            <div class="span1 text-right"><a href="#"><i class="icon-remove"></i></a></div>
+                                            <div class="span7">
+                                                <p>
+                                                    <a id="toggle-6" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                                    <a href="#">adriagil</a>
+                                                    <span class="muted">124 punts</span>
+                                                    <span class="muted">fa 1 minut</span>
+                                                </p>
+                                                <p data-toggle-id="toggle-6">Oh my god. It can't be possible!</p>
+                                            </div>
+                                        </div>
+                                        <!-- /depth 3 -->
+                                    </div>
+                                </div>
+                                <div class="row" data-toggle-id="toggle-4">
+                                    <div class="span1 text-right"><a href="#"><i class="icon-ok"></i></a></div>
+                                    <div class="span8">
+                                        <p>
+                                            <a id="toggle-7" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                            <a href="#">jeronimusjackson</a>
+                                            <span class="muted">27 punts</span>
+                                            <span class="muted">fa 4 dies</span>
+                                        </p>
+                                        <p data-toggle-id="toggle-7">Movil, cartera, tabaco, llaves</p>
+                                    </div>
+                                </div>
+                                <!-- /depth 2 -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span1 text-right"><a href="#"><i class="icon-remove"></i></a></div>
+                            <div class="span9">
+                                <p>
+                                    <a id="toggle-8" class="toggle-view" href="javascript:void(0)">[-]</a>
+                                    <a href="#">wkov</a>
+                                    <span class="muted">0 punts</span>
+                                    <span class="#">fa 47 hores</span>
+                                </p>
+                                <p data-toggle-id="toggle-8">Oh no otra vez tu!</p>
+                            </div>
+                        </div>
+                        <!-- /depth 1 -->
+
+                    </div>
+                    <!-- /content -->
+
+                    <!-- sidebar -->
+                    <aside class="span2">
+                        Lorem ipsum dolor sit amet!
+                    </aside>
+                    <!-- sidebar -->
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="divider"></div>
+            <ul class="inline text-center">
+                <li><a class="muted" href="#"><small>Contacta amb l'equip</small></a></li>
+                <li class="divider muted"><small>-</small></li>
+                <li><a class="muted" href="#"><small>Visita el projecte a Github</small></a></li>
+            </ul>
+            <p class="text-center muted"><small>R.U.S.C. - 2014</small></p>
+        </footer>
+
+    </body>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-slider.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // tooltips
+            $('.ttip').tooltip();
+
+            // sliders
+            $('.sldr').slider({
+                min: 0,
+                max: 10,
+                value: 5,
+                step: 1,
+                orientation: 'horizontal',
+                tooltip: 'hide'
+            }).on('slide', function(ev) {
+                $("[data-sldr-id*='" + this.id + "']").html(ev.value);
+            });
+
+            // dropdowns
+            $('.equalizer-controls').click(function(e) {
+                e.stopPropagation();
+            });
+
+            // toggle (expand/collapse) view
+            $('.toggle-view').on('click', function() {
+                var el = $("[data-toggle-id*='" + this.id + "']");
+                var parent = $('#' + this.id);
+                el.toggle();
+
+                if ( el.is(':hidden') )
+                    parent.html('[+]');
+                else
+                    parent.html('[-]');
+            });
+        });
+    </script>
+</html>
+
+<!-- TODO: remove <small> and set smaller font-size. mantain if semantic. -->
+<!-- TODO: max span possible, span separations, font sizes, border nested -->
+<!-- TODO: comments expand / collapse: '+' symbol, href not going to top -->
+<!-- TODO: min-width for the whole page -->
