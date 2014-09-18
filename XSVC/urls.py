@@ -16,11 +16,11 @@ from registration.backends.default.views import RegistrationView
 import postman
 import micawber
 
-
-
-
 from django.contrib import admin
 admin.autodiscover()
+
+from XSVC.api import AportacioResource
+api_resource_aportacio = AportacioResource()
 
 urlpatterns = patterns('',
     # Examples:
@@ -91,4 +91,6 @@ urlpatterns = patterns('',
         {'post_reset_redirect' : '/user/password/done/'}),
     (r'^user/password/done/$',
         'django.contrib.auth.views.password_reset_complete'),
+    #api rest
+    url(r'^api/', include(api_resource_aportacio.urls))
 )

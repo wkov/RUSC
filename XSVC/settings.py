@@ -152,6 +152,7 @@ INSTALLED_APPS = (
     'django_filters',
     'django_mailbox',
     'social_auth',
+    'tastypie'
     #nltk - The Natural Language Toolkit
 )
 # TODO: create a requirements.txt file: pip install -r requirements.txt

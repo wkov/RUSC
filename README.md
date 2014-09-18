@@ -20,12 +20,13 @@ registration | 1.0.0 final | pip install django-registration==1.0.0
 django_countries | ? | pip install django-countries
 pygraphviz | ? | pip install pygraphviz (*1)
 nltk | 3.0.0b2 | pip install nltk==3.0.0b2
+django-tastypie | 0.12.0 | pip install django-tastypie==0.12.0
 
 For installing dependencies recursively it is as simple as generating a *requirements.txt* file with all the modules listed and execute:
 
 `pip install -r requirements.txt`
 
-(*1) Follow these steps to install pygraphviz on OS X:
+(*1a) Follow these steps to install pygraphviz on OS X:
 > `brew install graphviz`
 
 > *pygraphviz depends on graphviz and its a wrapper for python*
@@ -39,6 +40,34 @@ For installing dependencies recursively it is as simple as generating a *require
 > If doesn't work after these steps try to do the following:
 
 > `export PKG_CONFIG_PATH=/usr/local/Cellar/graphviz/2.38.0/lib/pkgconfig`
+
+(*1b) Follow these steps to install pygraphviz on Windows8.1:
+> Download Graphviz .msi installer from the [project page](http://www.graphviz.org/Download_windows.php) (tested with 2.38)
+
+> Download PyGraphviz sources from [repository](https://pypi.python.org/pypi/pygraphviz) (tested with 1.2)
+
+> Configure `setup.py` from the sources to match:
+```python
+library_path="C:\Program Files (x86)\Graphviz2.38\lib\debug\lib"
+include_path="C:\Program Files (x86)\Graphviz2.38\include\graphviz"
+```
+> Download and install `mingw-get-inst-20100831.exe` from [SourceForge](http://sourceforge.net/projects/mingw/files/OldFiles/mingw-get-inst/mingw-get-inst-20100831/)
+
+> Add MinGW to the system path `C:\Users\AMARIS\Documents\MinGW\bin`
+
+> Change line 285 from *C:\Users\AMARIS\Documents\Python27\Lib\distutils\unixcompiler.py*:
+
+> `compiler = os.path.basename(sysconfig.get_config_var("CC"))`
+
+> to
+
+> `compiler = "gcc"`
+
+> Change back the line 285 after building pygraphviz
+
+> Copy the content of *build/lib.win32-2.7* directory to virtualenv *site-packages* folder
+
+> Test with `manage.py graph_models -a -g -o my_project_visualized.png`
 
 #### Gitignore
 Please add the following files and extensions to the list to be ignored by Git when pushing changes.
