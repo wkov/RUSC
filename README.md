@@ -69,6 +69,17 @@ include_path="C:\Program Files (x86)\Graphviz2.38\include\graphviz"
 
 > Test with `manage.py graph_models -a -g -o my_project_visualized.png`
 
+(*1c) Follow these steps to install pygraphviz on Ubuntu 14.10:
+> `apt-get install graphviz libgraphviz-dev`
+
+> If not installed, run `apt-get install pkg-config`
+
+> If getting error "**x86_64-linux-gnu-gcc failed with exit status 1**", install:
+```bash
+apt-get install graphviz-dev
+apt-get install python-dev
+```
+
 #### Gitignore
 Please add the following files and extensions to the list to be ignored by Git when pushing changes.
 Need to create a .gitignore file in the root of your repo:
