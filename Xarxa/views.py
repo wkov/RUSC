@@ -197,6 +197,7 @@ class AportacioListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(AportacioListView, self).get_context_data(**kwargs)
+
         if self.request.user.is_authenticated():
             voted = Vote.objects.filter(voter=self.request.user)
             aportacions_in_page = [aportacio.id for aportacio in context["object_list"]]
@@ -225,6 +226,7 @@ class AportacioxTemaListView(ListView):
             context["voted"] = voted
         return context
 
+
 class AportacioxTagListView(ListView):
     model = Aportacio
     paginate_by = 5
@@ -245,9 +247,9 @@ class AportacioxTagListView(ListView):
             context["voted"] = voted
         return context
 
+
 class AportacioDetailView(DetailView):
     model = Aportacio
-
     def get_context_data(self, **kwargs):
         context = super(AportacioDetailView, self).get_context_data(**kwargs)
         pk = self.kwargs['pk']

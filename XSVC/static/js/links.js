@@ -299,7 +299,7 @@ $.ajax({
 });
 //gestionem a continuacio el borrat de links ja afegits
 
-$(".r1").live('click',function(){
+$(".r1").on('click',function(){
 
 //        $("#result1").html("").add()
 
@@ -368,7 +368,7 @@ $(".r1").live('click',function(){
 
     });
 
-$(".r2").live('click',function(){
+$(".r2").on('click',function(){
 
 //        $("#result1").html("").add()
 
@@ -440,7 +440,7 @@ $(".r2").live('click',function(){
 
     });
 
-$(".r3").live('click',function(){
+$(".r3").on('click',function(){
 
 //        $("#result1").html("").add()
 
@@ -513,7 +513,7 @@ $(".r3").live('click',function(){
 
     });
 
- $(".r4").live('click',function(){
+ $(".r4").on('click',function(){
 
 //        $("#result1").html("").add()
 
