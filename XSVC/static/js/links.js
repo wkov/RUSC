@@ -2,7 +2,7 @@
 
 $(document).ready(function()
 {
-//function urlExists(url, callback){
+//araaaaaaaaaaaaaaaaaaaafunction urlExists(url, callback){
 //  $.ajax({
 //    type: 'HEAD',
 //    url: url,
